@@ -8,8 +8,8 @@ import ui.browsers.BrowserSetting;
 
 public class BasicPageDefinision {
 
-    private BasicPage basicPage = new BasicPage();
-    private BrowserSetting browserSetting  = new BrowserSetting();
+    private final BasicPage basicPage = new BasicPage();
+    private final BrowserSetting browserSetting  = new BrowserSetting();
 
 
     @Given("open web page in Chrome")
@@ -101,6 +101,11 @@ public class BasicPageDefinision {
     @Then("click cart button after added product")
     public void clickCartButtonAfterAddedProduct() {
         basicPage.clickCartButtonAfterAddedProduct();
+    }
+
+    @Then("click link with text {string}")
+    public void clickLinkWithText(String arg0) {
+        basicPage.linkWithText(arg0);
     }
 }
 

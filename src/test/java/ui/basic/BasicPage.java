@@ -3,6 +3,7 @@ package ui.basic;
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class BasicPage {
@@ -63,7 +64,7 @@ public class BasicPage {
     }
 
     public void clickCartButton() {
-        $(By.xpath("//span[contains(text(),'Carrito de compra ')]")).click();
+        $(By.xpath("//header/div[4]/div[3]/div[1]/a[1]")).click();
     }
     public void clickCartButtonAfterAddedProduct() {
         $(By.xpath("//span[contains(text(),'Carrito de compra (1)')]")).click();
@@ -76,4 +77,9 @@ public class BasicPage {
     public void checkSize(int size) {
         $(By.xpath("//div[contains(text(),'Talla:"+size+"')]"));
     }
+
+    public void linkWithText(String arg0) {
+        $(By.xpath("//a[contains(text(),'"+arg0+"')]"));
+    }
+
 }
