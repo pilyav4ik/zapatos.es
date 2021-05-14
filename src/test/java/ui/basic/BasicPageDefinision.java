@@ -3,12 +3,24 @@ package ui.basic;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.qameta.allure.Step;
+import io.cucumber.java.en.When;
+import ui.browsers.BrowserSetting;
 
 public class BasicPageDefinision {
 
     private BasicPage basicPage = new BasicPage();
+    private BrowserSetting browserSetting  = new BrowserSetting();
 
+
+    @Given("open web page in Chrome")
+    public void openChrome(){
+        browserSetting.openChrome();
+    }
+
+    @Given("open web page in Firefox")
+    public void openFirefox(){
+        browserSetting.openFirefox();
+    }
     @Given("input {string} to search")
     public void inputFieldWithNameVisible(String text) {
         basicPage.searchField(text);
@@ -44,5 +56,51 @@ public class BasicPageDefinision {
         basicPage.textVisibility(text);
     }
 
+    @And("go to section with header {string}")
+    public void sectionWithHeader(String text){
+        basicPage.headerH3WithText(text);
+    }
+
+    @And("wait <number> seconds")
+    public void waitSeconds(int seconds) throws InterruptedException {
+        Thread.sleep(seconds);
+    }
+
+
+    @Then("click button with text {string}")
+    public void clickButtonWithText(String arg0) {
+        basicPage.clickButton(arg0);
+    }
+
+    @And("select size {int}")
+    public void changeSizeSize(int size) {
+        basicPage.selectSize(size);
+    }
+
+    @When("cart button must have text {string}")
+    public void cartButtonMustHaveText(String arg0) throws InterruptedException {
+        Thread.sleep(3000);
+        basicPage.cartButtonSize(arg0);
+    }
+
+    @Then("click cart button")
+    public void clickCartButton() {
+        basicPage.clickCartButton();
+    }
+
+    @Then("close popup window with added product")
+    public void closePopupWindowWithAddedProduct() {
+        basicPage.closePopup();
+    }
+
+    @Then("on the cart page product size must be {int}")
+    public void onTheCartPageProductSizeMustBeSize(int size) {
+        basicPage.checkSize(size);
+    }
+
+    @Then("click cart button after added product")
+    public void clickCartButtonAfterAddedProduct() {
+        basicPage.clickCartButtonAfterAddedProduct();
+    }
 }
 
