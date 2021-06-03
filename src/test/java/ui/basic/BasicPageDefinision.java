@@ -21,6 +21,12 @@ public class BasicPageDefinision {
     public void openFirefox(){
         browserSetting.openFirefox();
     }
+
+    @And("close browser")
+    public void closeBrowser(){
+        browserSetting.closeBrowser();
+    }
+
     @Given("input {string} to search")
     public void inputFieldWithNameVisible(String text) {
         basicPage.searchField(text);
@@ -61,7 +67,7 @@ public class BasicPageDefinision {
         basicPage.headerH3WithText(text);
     }
 
-    @And("wait <number> seconds")
+    @And("wait {int} seconds")
     public void waitSeconds(int seconds) throws InterruptedException {
         Thread.sleep(seconds);
     }

@@ -11,6 +11,7 @@ Feature: Cart functionality in Chrome
     Then click link with text "Ir al carrito"
     Then click link with text "X Eliminar artículo"
     Then cart button must have text "Carrito de compra (0)"
+    And close browser
 
     Examples:
       |search phrase|link title|size|

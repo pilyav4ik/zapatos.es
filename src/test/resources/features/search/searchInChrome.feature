@@ -7,6 +7,7 @@ Feature: Product search in Chrome
    Then click product with link title "<link title>"
    Then text in breadcrumbs is "<link title>"
    And brand link with text "<brand>" visible
+   And close browser
 
    Examples:
    |search phrase|link title|brand|
@@ -18,6 +19,7 @@ Feature: Product search in Chrome
     Given input "<search phrase>" to search
     And click search button
     Then text with "<text output>" visible
+    And close browser
 
     Examples:
       |search phrase|text output|

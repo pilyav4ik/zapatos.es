@@ -12,6 +12,7 @@ Feature: Cart functionality in Firefox
     When cart button must have text "Carrito de compra (1)"
     Then click cart button after added product
     Then on the cart page product size must be <size>
+    And close browser
 
     Examples:
       |search phrase|link title|size|

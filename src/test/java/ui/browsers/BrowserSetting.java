@@ -1,6 +1,7 @@
 package ui.browsers;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -23,4 +24,7 @@ public class BrowserSetting {
         buttonAcceptCookies();
     }
 
+    public void closeBrowser() {
+        Selenide.closeWindow();
+    }
 }
