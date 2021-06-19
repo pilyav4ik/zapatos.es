@@ -1,5 +1,6 @@
 package ui.browsers;
 
+import com.codeborne.selenide.AssertionMode;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
@@ -13,6 +14,8 @@ public class BrowserSetting {
     public void openChrome(){
         Configuration.browser = "Chrome";
         Configuration.startMaximized = true;
+        Configuration.webdriverLogsEnabled = true;
+        Configuration.screenshots = true;
         open("https://www.zapatos.es/");
         buttonAcceptCookies();
     }
@@ -20,6 +23,8 @@ public class BrowserSetting {
     public void openFirefox(){
         Configuration.browser = "Firefox";
         Configuration.startMaximized = true;
+        Configuration.webdriverLogsEnabled = true;
+        Configuration.screenshots = true;
         open("https://www.zapatos.es/");
         buttonAcceptCookies();
     }

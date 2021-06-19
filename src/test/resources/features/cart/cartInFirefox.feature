@@ -1,6 +1,6 @@
 Feature: Cart functionality in Firefox
 
-  Scenario Template: Add product to cart from product page
+  Scenario Template: Add product to cart from product page in Firefox
     Given open web page in Firefox
     Given input "<search phrase>" to search
     And click search button

@@ -1,6 +1,6 @@
 Feature: Cart functionality in Chrome
 
-  Scenario Template: Delete product from cart
+  Scenario Template: Delete product from cart in Chrome
     Given open web page in Chrome
     Given input "<search phrase>" to search
     And click search button

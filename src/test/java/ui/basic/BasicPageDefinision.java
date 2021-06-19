@@ -78,10 +78,7 @@ public class BasicPageDefinision {
         basicPage.clickButton(arg0);
     }
 
-    @And("select size {int}")
-    public void changeSizeSize(int size) {
-        basicPage.selectSize(size);
-    }
+
 
     @When("cart button must have text {string}")
     public void cartButtonMustHaveText(String arg0) throws InterruptedException {
@@ -101,7 +98,7 @@ public class BasicPageDefinision {
 
     @Then("on the cart page product size must be {int}")
     public void onTheCartPageProductSizeMustBeSize(int size) {
-        basicPage.checkSize(size);
+        basicPage.productCountInCartPage(size);
     }
 
     @Then("click cart button after added product")

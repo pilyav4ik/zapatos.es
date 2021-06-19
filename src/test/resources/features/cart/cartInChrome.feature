@@ -1,6 +1,6 @@
 Feature: Cart functionality in Chrome
 
-  Scenario Template: Add product to cart from product page
+  Scenario Template: Add product to cart from product page in Chrome
     Given open web page in Chrome
     Given input "<search phrase>" to search
     And click search button
@@ -8,6 +8,7 @@ Feature: Cart functionality in Chrome
     Then click button with text "Añadir al carrito"
     And select size <size>
     Then text with "El producto ha sido añadido al carrito" visible
+    And text with "<tala>" in precart popup visible
     Then close popup window with added product
     When cart button must have text "Carrito de compra (1)"
     Then click cart button after added product
@@ -15,5 +16,5 @@ Feature: Cart functionality in Chrome
     And close browser
 
     Examples:
-      |search phrase|link title|size|
-      |zapatillas mayoral|Zapatillas MAYORAL - 47249 Rosa 73|37|
+      |search phrase|link title|size|tala|
+      |zapatillas mayoral|Zapatillas MAYORAL - 47249 Rosa 73|37|Talla: 37|

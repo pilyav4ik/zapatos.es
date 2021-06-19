@@ -1,6 +1,6 @@
 Feature: Product search in Firefox
 
-  Scenario Template: Product search text input
+  Scenario Template: Product search text input in Firefox
     Given open web page in Firefox
     Given input "<search phrase>" to search
     And click search button
@@ -13,7 +13,7 @@ Feature: Product search in Firefox
       |search phrase|link title|brand|
       |zapatillas mayoral|Zapatillas MAYORAL - 47249 Rosa 73|Mayoral|
 
-  Scenario Template: Fail product search text input
+  Scenario Template: Fail product search text input in Firefox
     Given open web page in Firefox
     Given input "<search phrase>" to search
     And click search button

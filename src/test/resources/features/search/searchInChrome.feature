@@ -1,6 +1,6 @@
 Feature: Product search in Chrome
 
- Scenario Template: Product search text input
+ Scenario Template: Product search text input in Chrome
    Given open web page in Chrome
    Given input "<search phrase>" to search
    And click search button
@@ -14,7 +14,7 @@ Feature: Product search in Chrome
    |zapatillas mayoral|Zapatillas MAYORAL - 47249 Rosa 73|Mayoral|
    |Botines new balance|Botines NEW BALANCE - KH700BGY  Negro|New Balance|
 
-  Scenario Template: Fail product search text input
+  Scenario Template: Fail product search text input in Chrome
     Given open web page in Chrome
     Given input "<search phrase>" to search
     And click search button

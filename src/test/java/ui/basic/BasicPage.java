@@ -1,7 +1,11 @@
 package ui.basic;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
+
+import java.util.List;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
@@ -29,7 +33,8 @@ public class BasicPage {
     }
 
     public void clickToProduct(String linkTitle){
-        $(By.xpath("//a[@title='"+linkTitle+"']")).click();
+        SelenideElement productsList = $(By.className("products-list__link"));
+        productsList.click();
     }
 
     public void textIncludedInBreadcrumbs(){
@@ -74,12 +79,12 @@ public class BasicPage {
         $(By.xpath("//body/div[3]/div[2]/form[1]/section[1]/div[2]/div[1]/div[6]/div[3]/div[1]/div[1]/div[1]/button[1]")).click();
     }
 
-    public void checkSize(int size) {
-        $(By.xpath("//div[contains(text(),'Talla:"+size+"')]"));
-    }
 
     public void linkWithText(String arg0) {
         $(By.xpath("//a[contains(text(),'"+arg0+"')]"));
     }
 
+    public void productCountInCartPage(int size) {
+        $(By.xpath("//h1[contains(text(),'Carrito de compra ("+size+")')]"));
+    }
 }
